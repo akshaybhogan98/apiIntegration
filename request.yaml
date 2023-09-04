@@ -1,0 +1,159 @@
+components:
+  schemas: 
+    location: 
+      type: object
+      properties: 
+        code: 
+          type: string
+        name: 
+          type: string
+        timezone: 
+          type: string
+        coordinates: 
+          type: object
+          properties: 
+            latitude: 
+              type: number
+            longitude: 
+              type: number
+    forecast: 
+      type: object
+      properties: 
+        items: 
+          type: array
+          items: 
+            type: object
+            properties: 
+              date: 
+                type: string
+                format: date-time
+              period: 
+                type: integer
+                format: int32
+              freshSnow: 
+                type: integer
+                format: int32
+              weather: 
+                type: object
+                properties: 
+                  state: 
+                    type: integer
+                    format: int32
+                  text: 
+                    type: string
+                  icon: 
+                    type: string
+              sunHours: 
+                type: string
+                format: nullable
+              rainHours: 
+                type: string
+                format: nullable
+              prec: 
+                type: object
+                properties: 
+                  sum: 
+                    type: integer
+                    format: int32
+                  probability: 
+                    type: integer
+                    format: int32
+                  sumAsRain: 
+                    type: string
+                    format: nullable
+                  class: 
+                    type: integer
+                    format: int32
+              temperature: 
+                type: object
+                properties: 
+                  avg: 
+                    type: integer
+                    format: int32
+              pressure: 
+                type: integer
+                format: int32
+              relativeHumidity: 
+                type: integer
+                format: int32
+              clouds: 
+                type: object
+                properties: 
+                  high: 
+                    type: integer
+                    format: int32
+                  low: 
+                    type: integer
+                    format: int32
+                  middle: 
+                    type: integer
+                    format: int32
+              wind: 
+                type: object
+                properties: 
+                  unit: 
+                    type: string
+                  direction: 
+                    type: string
+                  text: 
+                    type: string
+                  avg: 
+                    type: integer
+                    format: int32
+                  min: 
+                    type: string
+                    format: nullable
+                  max: 
+                    type: string
+                    format: nullable
+                  gusts: 
+                    type: object
+                    properties: 
+                      value: 
+                        type: integer
+                        format: int32
+                      text: 
+                        type: string
+                        format: nullable
+                  significationWind: 
+                    type: boolean
+              windchill: 
+                type: object
+                properties: 
+                  avg: 
+                    type: integer
+                    format: int32
+                  min: 
+                    type: string
+                    format: nullable
+                  max: 
+                    type: string
+                    format: nullable
+              snowLine: 
+                type: object
+                properties: 
+                  avg: 
+                    type: string
+                    format: nullable
+                  min: 
+                    type: string
+                    format: nullable
+                  max: 
+                    type: string
+                    format: nullable
+                  unit: 
+                    type: string
+              isNight: 
+                type: boolean
+        forecastDate: 
+          type: string
+          format: date-time
+        nextUpdate: 
+          type: string
+          format: date-time
+        source: 
+          type: string
+        point: 
+          type: string
+        fingerprint: 
+          type: string
